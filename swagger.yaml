@@ -1,0 +1,225 @@
+openapi: 3.0.0
+info:
+  title: Product API
+  contact: {}
+  version: "1.0"
+servers:
+  - url: https://productapi-deutschkihun.herokuapp.com/api/v1
+    variables: {}
+paths:
+  /auth/register:
+    post:
+      tags:
+        - Auth
+      summary: register user
+      operationId: registeruser
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/registeruserrequest"
+            example:
+              name: kihun
+              email: deutschkihun123@gmail.com
+              password: rlgns48126
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security: []
+  /auth/login:
+    post:
+      tags:
+        - Auth
+      summary: login user
+      operationId: loginuser
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/loginuserrequest"
+            example:
+              email: deutschkihun123@gmail.com
+              password: rlgns48126
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security: []
+  /products:
+    post:
+      tags:
+        - Product
+      summary: create product
+      operationId: createproduct
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/createproductrequest"
+            example:
+              name: laptop
+              category: Preference
+              price: 1000
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+    get:
+      tags:
+        - Product
+      summary: get all products
+      operationId: getallproducts
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+  /products/{id}:
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: The user ID
+    get:
+      tags:
+        - Product
+      summary: get product
+      operationId: getproduct
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+    patch:
+      tags:
+        - Product
+      summary: update product
+      operationId: updateproduct
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/updateproductrequest"
+            example:
+              name: computer
+              category: Functionality
+              price: 123
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+    delete:
+      tags:
+        - Product
+      summary: delete product
+      operationId: deleteproduct
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+components:
+  schemas:
+    registeruserrequest:
+      title: registeruserrequest
+      required:
+        - name
+        - email
+        - password
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        name: kihun
+        email: deutschkihun123@gmail.com
+        password: rlgns48126
+    loginuserrequest:
+      title: loginuserrequest
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: deutschkihun123@gmail.com
+        password: rlgns48126
+    createproductrequest:
+      title: createproductrequest
+      required:
+        - name
+        - category
+        - price
+      type: object
+      properties:
+        name:
+          type: string
+        category:
+          type: string
+        price:
+          type: integer
+          format: int32
+      example:
+        name: laptop
+        category: Preference
+        price: 1000
+    updateproductrequest:
+      title: updateproductrequest
+      required:
+        - name
+        - category
+        - price
+      type: object
+      properties:
+        name:
+          type: string
+        category:
+          type: string
+        price:
+          type: integer
+          format: int32
+      example:
+        name: computer
+        category: Functionality
+        price: 123
+  securitySchemes:
+    httpBearer:
+      type: http
+      scheme: bearer
+security:
+  - httpBearer: []
+tags:
+  - name: Auth
+    description: ""
+  - name: Product
+    description: ""
