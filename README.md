@@ -19,8 +19,22 @@ If you want to keep it stateful, you will use cookies or sessions, which are ser
 #### Swagger API 
 
    * Swagger API provide a api docs page with example. 
-
-
+   * Whole api page is constructed in swagger.yaml 
+ 
 #### Heroku 
 
    * This application is deployed by heroku 
+   * Procfile is an script setup file in heroku 
+   * When deploying make sure that "nodemon" is not used, "node" should be used in package.json and Procfile. 
+
+
+#### Error handling 
+
+   * This app has 2 different error handling page. First error handling in error folder handles error happend internal api issue 
+   * Second error handler by middleware handle general communication error in external issue like databse. 
+
+
+reference
+* https://editor.swagger.io/
+* https://swagger.io/docs/specification/describing-parameters/
+* https://www.apimatic.io/
