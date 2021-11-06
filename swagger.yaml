@@ -23,7 +23,7 @@ paths:
             example:
               name: kihun
               email: deutschkihun123@gmail.com
-              password: rlgns48126
+              password: 123123123
         required: true
       responses:
         "200":
@@ -46,7 +46,7 @@ paths:
               $ref: "#/components/schemas/loginuserrequest"
             example:
               email: deutschkihun123@gmail.com
-              password: rlgns48126
+              password: 123123123
         required: true
       responses:
         "200":
@@ -93,9 +93,9 @@ paths:
       - in: path
         name: id
         schema:
-          type: integer
+          type: string
         required: true
-        description: The user ID
+        description: The products ID
     get:
       tags:
         - Product
@@ -159,7 +159,7 @@ components:
       example:
         name: kihun
         email: deutschkihun123@gmail.com
-        password: rlgns48126
+        password: 123123123
     loginuserrequest:
       title: loginuserrequest
       required:
@@ -173,7 +173,7 @@ components:
           type: string
       example:
         email: deutschkihun123@gmail.com
-        password: rlgns48126
+        password: 123123123
     createproductrequest:
       title: createproductrequest
       required:
