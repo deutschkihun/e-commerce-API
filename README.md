@@ -1,11 +1,6 @@
 # Product-API
 
-# Developer-API-Docs
-
-## Content
-
-Will be updated soon !!
-
+https://productapi-deutschkihun.herokuapp.com/docs/
 
 #### JsonWebToken 
 
@@ -20,3 +15,12 @@ Will be updated soon !!
 Why is Token necessary? The reason is because of the characteristics of http. Http is a connection-oriented protocol. Therefore, the connection is terminated when one request and response cycle are completed, so no matter how many requests the same client sends, all protocols are perceived as new. This is called state. 
 
 If you want to keep it stateful, you will use cookies or sessions, which are server-based authentication functions. Since these technologies basically require storing data on the server, the server may be loaded. However, the token-based authentication system is stable. In other words, it does not maintain its state. This system no longer contains user authentication information in servers or sessions. Not only does the burden on the server decrease, but it also has high security, and can be applied to platforms and domains.
+
+#### Swagger API 
+
+   * Swagger API provide a api docs page with example. 
+
+
+#### Heroku 
+
+   * This application is deployed by heroku 
