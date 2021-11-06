@@ -36,6 +36,13 @@ If you want to keep it stateful, you will use cookies or sessions, which are ser
    * Second error handler by middleware handle general communication error in external issue like databse. 
 
 
+#### Environmental variable 
+
+   * MONGO_URI: mongodb table connection
+   * JWT_SECRET: secret or public key for token
+   * JWT_LIFETIME: lifetime of token 
+
+
 reference
 * https://editor.swagger.io/
 * https://swagger.io/docs/specification/describing-parameters/
