@@ -10,6 +10,8 @@ https://productapi-deutschkihun.herokuapp.com/docs/
    * The generateToken function contains a function called jwt.sign. The Sign function receives payload as a factor, 
    which means the transferred data. Basically, since payload is in the form of a string, it must be converted into a JSON form.
    
+   * jwt.verify check token with secretOrPublicKey and decode then so that we can get a pure user informantion.  
+   
 **Why token is needed? ?**
 
 Why is Token necessary? The reason is because of the characteristics of http. Http is a connection-oriented protocol. Therefore, the connection is terminated when one request and response cycle are completed, so no matter how many requests the same client sends, all protocols are perceived as new. This is called state. 
