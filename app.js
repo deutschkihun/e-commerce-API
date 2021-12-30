@@ -37,7 +37,7 @@ app.use(cors());
 app.use(xss())
 
 app.get('/',(req,res) => {
-    res.send('<h2>Product API<h2><a href="/docs">document</a>')
+    res.redirect('/docs')
 })
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
