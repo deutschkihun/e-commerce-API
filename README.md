@@ -1,6 +1,6 @@
 # OnlineShop-Baseline-API
 
-https://productapi-deutschkihun.herokuapp.com/docs/
+https://onlineshop-baseline-api.herokuapp.com
 
 #### Swagger API 
 
