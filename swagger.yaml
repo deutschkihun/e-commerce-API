@@ -1,10 +1,11 @@
 openapi: 3.0.0
 info:
-  title: Product API
+  title: Online shop baseline API
+  description: This documentation provides the ability to simulate user registration, login with talken, new product registration, registered product full inquiry, individual inquiry, product information modification and deletion functions essential to online shops. This documentation will help you understand and use api more easily. 
   contact: {}
   version: "1.0"
 servers:
-  - url: https://productapi-deutschkihun.herokuapp.com/api/v1
+  - url: http://localhost:5010/api/v1
     variables: {}
 paths:
   /auth/register:
@@ -21,9 +22,9 @@ paths:
             schema:
               $ref: "#/components/schemas/registeruserrequest"
             example:
-              name: kihun
-              email: deutschkihun123@gmail.com
-              password: 123123123
+              name: test
+              email: test@gmail.com
+              password: "123123123"
         required: true
       responses:
         "200":
@@ -45,8 +46,8 @@ paths:
             schema:
               $ref: "#/components/schemas/loginuserrequest"
             example:
-              email: deutschkihun123@gmail.com
-              password: 123123123
+              email: test@gmail.com
+              password: "123123123"
         required: true
       responses:
         "200":
@@ -99,8 +100,8 @@ paths:
     get:
       tags:
         - Product
-      summary: get product
-      operationId: getproduct
+      summary: get single product
+      operationId: getsingleproduct
       parameters: []
       responses:
         "200":
@@ -143,7 +144,7 @@ paths:
 components:
   schemas:
     registeruserrequest:
-      title: registeruserrequest
+      title: register user request
       required:
         - name
         - email
@@ -157,11 +158,11 @@ components:
         password:
           type: string
       example:
-        name: kihun
-        email: deutschkihun123@gmail.com
-        password: 123123123
+        name: test
+        email: test@gmail.com
+        password: "123123123"
     loginuserrequest:
-      title: loginuserrequest
+      title: login user request
       required:
         - email
         - password
@@ -172,10 +173,10 @@ components:
         password:
           type: string
       example:
-        email: deutschkihun123@gmail.com
-        password: 123123123
+        email: test@gmail.com
+        password: "123123123"
     createproductrequest:
-      title: createproductrequest
+      title: create product request
       required:
         - name
         - category
@@ -194,7 +195,7 @@ components:
         category: Preference
         price: 1000
     updateproductrequest:
-      title: updateproductrequest
+      title: update product request
       required:
         - name
         - category
