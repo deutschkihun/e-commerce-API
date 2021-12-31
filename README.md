@@ -1,4 +1,4 @@
-# Product-API
+# OnlineShop-Baseline-API
 
 https://productapi-deutschkihun.herokuapp.com/docs/
 
