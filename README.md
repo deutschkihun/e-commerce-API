@@ -13,6 +13,9 @@ https://onlineshop-baseline-api.herokuapp.com
    * JWT_SECRET: secret or public key for token
    * JWT_LIFETIME: lifetime of token 
 
+#### Deployment
+
+   * Heroku with Procfile: indicate what heroku has to do when this project is deployed by heroku. (web: node app.js)
 
 reference
 * https://editor.swagger.io/
